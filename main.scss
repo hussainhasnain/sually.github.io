@@ -1,0 +1,566 @@
+/**************************************** Media Queries **********************************/
+$bp-largest: 75em; //1200px
+$bp-medium: 56.25em; // 900px
+$bp-small: 37.5em; // 600px
+
+/************************************** Colors ***************************************/
+$color-white: #fff;
+$color-black: #000;
+$color-grey-light: #a1a1a1;
+$color-grey-medium: #9C8B7B;
+$color-grey-dark: #3F2C29;
+$color-light: #f7f7f7;
+$color-pink-light: #E79499;
+$color-pink-dark: #D97B85;
+$color-orange: #e28d0d;
+
+/************************************** Fonts ***************************************/
+$font-primary: 'Poppins', sans-serif;
+
+/************************************** For centering our content within 1140 px ***************************************/
+.row{
+    max-width: 100rem;
+    margin: 0 auto;
+    @media only screen and (max-width: $bp-medium){
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+    @media only screen and (max-width: $bp-small){
+        max-width: 55rem;
+        margin: 0 auto;
+    }
+}
+/************************************** Universal Reset ***************************************/
+*,
+*:before,
+*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    @media only screen and (max-width: $bp-largest){
+        font-size: 60%;
+    }
+    @media only screen and (max-width: $bp-medium){
+        font-size: 58%;
+    }
+    @media only screen and (max-width: $bp-small){
+        font-size: 56%;
+    } 
+}
+body{
+    font-family: $font-primary;
+    font-weight: 400;
+    color: $color-grey-medium;
+    line-height: 1.6;
+}
+/************************************** Header starts here ***************************************/
+.header{
+    background-image: linear-gradient(to right bottom, rgba($color-black, .5), rgba($color-black, .5)), url(../img/girl1.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    &__nav{
+        display: flex;
+        align-items: center;
+        padding: 1.5rem 0;
+        @media only screen and (max-width: $bp-small){
+            align-items: flex-start;
+        }
+        /*====== header social icons ======*/
+        &--icons{
+            margin-left: auto;
+            
+            &--flex{
+                display: flex;
+                align-items: center;
+                & *:not(:last-child){
+                    margin-right: 1.5rem;
+                }
+            }
+        }
+    }
+    /*====== Header Text ======*/
+    &__textbox{
+        position: absolute;
+        top: 50%;
+        left: 24.5%;
+        transform: translate(-50%, -50%);
+        & *:not(:last-child){
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__text{
+        color: $color-light;
+        font-size: 2rem;
+    }
+}
+/*====== Logo ======*/
+.logo{
+    font-size: 3rem;
+    cursor: pointer;
+    color: $color-light;
+}
+/*====== Nav ======*/
+.nav{
+    &__list{
+        list-style: none;
+        margin-left: 10rem;
+        & *:not(:last-child){
+            margin-right: 3rem;
+        }
+    }
+    &__item{
+        display: inline;
+        @media only screen and (max-width:$bp-small){
+            display: block;
+        }
+    }
+    &__link,
+    &__link:link,
+    &__link:active{
+        text-decoration: none;
+        font-size: 1.7rem;
+        color: $color-light;
+        font-weight: 500;
+        &:hover{
+            color: $color-orange;
+            transition: all .2s;
+        }
+    }
+    &__active{
+        color: $color-light;
+        &:hover{
+            color: $color-orange;
+            transition: all .2s;
+        }
+    }
+}
+/*====== Icons ======*/
+.icon{
+    color: $color-light;
+    &__search{
+        font-size: 2rem;
+        cursor: pointer;
+        color: $color-light;
+    }
+    &__cart{
+        font-size: 2rem;
+        cursor: pointer;
+        position: relative;
+        color: $color-light;
+        &--notification{
+            position: absolute;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 10rem;
+            background-color: $color-orange;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: -1rem;
+            right: -2.7rem;
+            font-size: 1.2rem;
+            color: $color-white;
+            
+        }
+    }
+    &__user{
+        font-size: 2rem;
+        cursor: pointer;
+        color: $color-light;
+    }
+    &__menu{
+        font-size: 2rem;
+        color: $color-light;
+        display: none;
+        cursor: pointer;
+        @media only screen and (max-width:$bp-small){
+            display: block;
+            margin-left: 2rem;
+        }
+    }
+    &__star{
+        font-size: 1.2rem;
+        cursor: pointer;
+        color: $color-orange;
+    }
+}
+/*====== Headings ======*/
+.heading-primary{
+    font-size: 4.5rem;
+    color: $color-orange;
+    line-height: 1.3;
+    @media only screen and (max-width: $bp-small){
+        font-size: 3rem;
+    }
+}
+/*====== Buttons ======*/
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    &__orange{
+        padding: 1rem 3rem;
+        color: $color-white;
+        background-color: $color-orange;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        border: 1px solid $color-orange;
+        margin-top: 2rem;
+        &:hover{
+            color: $color-orange;
+            background-color: $color-light;
+            border: 1px solid $color-orange;
+            transition: all .5s;
+        }
+    }
+    &__dark{
+        padding: 1.5rem 1rem;
+        color: $color-white;
+        background-color: $color-grey-dark;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        border: 1px solid $color-grey-dark;
+        font-weight: 500;
+    }
+}
+/************************************** Header ends here ***************************************/
+
+/************************************** Section collection starts here ***************************************/
+.collection{
+    padding: 10rem 0;
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(6, 5vw);
+        grid-gap: 3rem;
+        &--item{
+            position: relative;
+            &-1{
+                grid-column: 1 / 4;
+                grid-row: 1 / 4;
+            }
+            &-2{
+                grid-column: 1 / 4;
+                grid-row: 4 / 7;
+            }
+            &-3{
+                grid-column: 4 / 8;
+                grid-row: 1 / 7;
+            }
+        }
+    }
+    &__img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        &--overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color-black, .7);
+            opacity: 0;
+            &:hover{
+                opacity: 1;
+                transition: all .5s;
+            }
+            &:hover .collection__img--content{
+                transform: translateY(2rem) translateX(2rem);
+                transition: all .5s;
+                @media only screen and (max-width: $bp-medium){
+                    transform: translateX(2rem) translateY(1rem);
+                    transition: all .5s;
+                }
+                @media only screen and (max-width: $bp-small){
+                    transform: translateX(2rem) translateY(1rem);
+                    transition: all .5s;
+                }
+            }
+        }
+        &--content{
+            transform: translateX(2rem) translateY(20rem);
+            @media only screen and (max-width: $bp-medium){
+                transform: translateX(2rem) translateY(4rem);
+            }
+            @media only screen and (max-width: $bp-small){
+                transform: translateX(2rem) translateY(2rem);
+            }
+        }
+        &--text{
+            color: $color-light;
+            font-weight: 500;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+        &--price{
+            color: $color-light;
+            font-weight: 500;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            
+        }
+    }
+    
+}
+.product{
+    &__name{
+        color: $color-light;
+        font-weight: 500;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        @media only screen and (max-width: $bp-medium){
+            font-size: 1.5rem;
+        }
+        
+        &--features{
+            color: $color-grey-dark;
+            text-transform: none;
+            font-size: 1.5rem;
+        }
+    }
+    &__price{
+        &--discounted{
+            color: $color-light;
+            font-weight: 500;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            @media only screen and (max-width: $bp-medium){
+                font-size: 1.5rem;
+            }
+            
+            &-features{
+                color: $color-grey-dark;
+                text-transform: none;
+                font-size: 1.5rem;
+            }
+        }
+        
+    }
+}
+/************************************** Section collection ends here ***************************************/
+
+/************************************** Section features starts here ***************************************/
+.features{
+    padding: 5rem 0;
+    background-color: $color-light;
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        grid-column-gap: 5rem;
+        grid-row-gap: 10rem;
+        @media only screen and (max-width: $bp-largest){
+            grid-row-gap: 7rem;
+            grid-column-gap: 3rem;
+        }
+        @media only screen and (max-width: $bp-largest){
+            grid-row-gap: 5rem;
+            grid-column-gap: 2rem;
+        }
+        @media only screen and (max-width: $bp-small){
+            grid-row-gap: 3rem;
+            grid-column-gap: 1rem;
+        }
+        // align-items: flex-start;
+        &--item{
+            &-1{
+
+            }
+            &-content{
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                grid-template-rows: repeat(8, min-content);
+            }
+            &-photo{
+
+            }
+            &-img{
+                width: 100%;
+            }
+        }
+        &--1{
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+            z-index: 1;
+        }
+        &--2{
+            grid-column: 7 / 9;
+            grid-row: 1 / 2;
+            z-index: 1;  
+            transform: translateX(.5rem);  
+        }
+        &--3{
+            grid-column: 1 / 6;
+            grid-row: 6 / 7;
+        }
+        &--4{
+            grid-column: 1 / 6;
+            grid-row: 7 / 8;
+        }
+        &--5{
+            grid-column: 1 / -1;
+            grid-row: 1 / 6;
+        }
+    }
+}
+.heading-secondary{
+    font-size: 4rem;
+    color: $color-grey-dark;
+}
+.textbox{
+    text-align: center;
+    padding: 0 15vw;
+    & > *{
+        margin-bottom: 3.5rem;
+    }
+    &--text{
+        font-size: 1.6rem;
+    }
+}
+/************************************** Section features ends here ***************************************/
+
+/************************************** Section gallery starts here ***************************************/
+.gallery{
+    padding: 5rem 0;
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(9, 5vw);
+        grid-gap: 2rem;
+        &--img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        &--1{
+            grid-column: 1 / 3;
+            grid-row: 1 / 7;
+        }
+        &--2{
+            grid-column: 3 / 5;
+            grid-row: 1 / 4;
+        }
+        &--3{
+            grid-column: 5 / 7;
+            grid-row: 1 / 4;
+        }
+        &--4{
+            grid-column: 3 / 5;
+            grid-row: 4 / 7;
+        }
+        &--5{
+            grid-column: 1 / 3;
+            grid-row: 7 / 10;
+        }
+        &--6{
+            grid-column: 3 / 5;
+            grid-row: 7 / 10;
+        }
+        &--7{
+            grid-column: 5 / 7;
+            grid-row: 4 / 10;
+        }
+    }
+}
+/************************************** Section gallery ends here ***************************************/
+
+/************************************** Section blog starts here ***************************************/
+.blog{
+    padding: 5rem 0;
+    background-color: $color-light;
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        grid-gap: 1rem;
+        &--item{
+            &-content{
+                padding: 0 .5vw;
+                & *:not(:last-child){
+                    margin-bottom: 1.5rem;
+                }
+            }
+            &-img{
+                width: 100%;
+            }
+            &-text{
+                font-size: 1.2rem;
+            }
+            &-more{
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: $color-grey-dark;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.heading-3{
+    font-size: 1.5rem;
+    color: $color-grey-dark;
+    line-height: 1;
+}
+/************************************** Section blog ends here ***************************************/
+
+/************************************** footer starts here ***************************************/
+.footer{
+    padding: 10rem 0;
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+        grid-column-gap: 1rem;
+        
+        &--item{
+            &-content{
+                padding: 0 1rem;
+                & *:not(:last-child){
+                    margin-bottom: 1.5rem;
+                }
+                &-text{
+                    font-size: 1.2rem;
+                    margin-top: 3rem;
+                }
+                &-copyright{
+                    font-size: 1.5rem;
+                    color: $color-grey-dark;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    &__nav{
+        &--list{
+            list-style: none;
+        }
+        &--link{
+            text-decoration: none;
+            font-size: 1.4rem;
+            color: inherit;
+            &:hover{
+                color: $color-orange;
+                transition: all .2s;
+            }
+            &-dark{
+                color: $color-grey-dark;
+                font-size: 2rem;
+                font-weight: 500;
+            }
+        }
+    }
+}
+.heading-4{
+    font-size: 2rem;
+    color: $color-grey-dark;
+    line-height: 1;
+}
+/************************************** footer starts here ***************************************/
+
+
+
+
